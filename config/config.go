@@ -18,7 +18,7 @@ func LoadConfig() Config {
 	}
 
 	return Config{
-		DatabaseDSN: getEnv("DATABASE_DSN", "user:password@tcp(localhost:3306)/dbname"),
+		DatabaseDSN: "root:admin@tcp(localhost:3306)/currency_db",
 		Port:        port,
 	}
 }

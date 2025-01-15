@@ -18,11 +18,35 @@ func GetAllRates(repo *repository.RateRepository) http.HandlerFunc {
 	}
 }
 func RegisterRoutes(mux *http.ServeMux, db *sql.DB) {
-	mux.HandleFunc("/rates", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Получение всех курсов валют"))
-	})
-	mux.HandleFunc("/rates/by-date", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Получение курсов валют за определённую дату"))
+	repo := &repository.RateRepository{DB: db}
+
+	// Маршрут для получения всех курсов
+	mux.HandleFunc("/api/rates", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json")
+
+		switch r.Method {
+		case http.MethodGet:
+			date := r.URL.Query().Get("date")
+			if date != "" {
+				rates, err := repo.GetRatesByDate(date)
+				if err != nil {
+					http.Error(w, "Ошибка получения данных", http.StatusInternalServerError)
+					return
+				}
+				json.NewEncoder(w).Encode(rates)
+				return
+			}
+
+			rates, err := repo.GetAllRates()
+			if err != nil {
+				http.Error(w, "Ошибка получения данных", http.StatusInternalServerError)
+				return
+			}
+			json.NewEncoder(w).Encode(rates)
+
+		default:
+			http.Error(w, "Метод не поддерживается", http.StatusMethodNotAllowed)
+		}
 	})
 }
 func GetRatesByDate(repo *repository.RateRepository) http.HandlerFunc {

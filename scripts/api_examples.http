@@ -1,0 +1,7 @@
+### Получить все курсы
+GET http://localhost:8080/api/rates
+Accept: application/json
+
+### Получить курсы за конкретную дату
+GET http://localhost:8080/api/rates?date=2024-03-14
+Accept: application/json

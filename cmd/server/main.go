@@ -1,13 +1,13 @@
 package main
 
 import (
-
     "fmt"
     "log"
     "net/http"
     "testProject/config"
     "testProject/internal/handlers"
     "testProject/pkg"
+    "testProject/internal/service"
 )
 
 func main() {
@@ -20,6 +20,11 @@ func main() {
 		log.Fatalf("Ошибка подключения к базе данных: %v", err)
 	}
 	defer database.Close()
+
+    // Создаем и запускаем сервис обновления курсов
+    rateRepo := &repository.RateRepository{DB: database}
+    rateUpdater := service.NewRateUpdater(rateRepo)
+    rateUpdater.StartDailyUpdate()
 
 	// Регистрация маршрутов
 	mux := http.NewServeMux()

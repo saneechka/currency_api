@@ -1,0 +1,127 @@
+openapi: 3.0.0
+info:
+  title: Currency Exchange Rates API
+  description: API для получения курсов валют НБРБ
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: support@example.com
+
+servers:
+  - url: http://localhost:8080
+    description: Local development server
+
+paths:
+  /api/rates:
+    get:
+      summary: Получение текущих курсов валют
+      description: Получение актуальных курсов валют из НБРБ
+      tags:
+        - rates
+      responses:
+        '200':
+          description: Успешный ответ
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RatesResponse'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /api/rates/by-date:
+    get:
+      summary: Получение курсов валют за определенную дату
+      description: Получение исторических данных курсов валют за указанную дату
+      tags:
+        - rates
+      parameters:
+        - in: query
+          name: date
+          required: true
+          schema:
+            type: string
+            format: date
+          example: "2024-01-16"
+          description: Дата в формате YYYY-MM-DD
+      responses:
+        '200':
+          description: Успешный ответ
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/RatesResponse'
+                  - $ref: '#/components/schemas/EmptyDateResponse'
+        '400':
+          description: Некорректный запрос
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Внутренняя ошибка сервера
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+components:
+  schemas:
+    Rate:
+      type: object
+      properties:
+        Cur_ID:
+          type: integer
+          description: Идентификатор валюты
+          example: 431
+        Date:
+          type: string
+          format: date
+          description: Дата курса
+          example: "2024-01-16"
+        Cur_Abbreviation:
+          type: string
+          description: Код валюты
+          example: "USD"
+        Cur_Scale:
+          type: integer
+          description: Количество единиц валюты
+          example: 1
+        Cur_Name:
+          type: string
+          description: Наименование валюты
+          example: "Доллар США"
+        Cur_OfficialRate:
+          type: number
+          format: double
+          description: Официальный курс
+          example: 3.2345
+
+    RatesResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/Rate'
+
+    EmptyDateResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: "нет информации за эту дату"
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+          example: "Ошибка получения данных"
+
+tags:
+  - name: rates
+    description: Операции с курсами валют
+
+security: []

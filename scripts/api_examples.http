@@ -1,6 +1,6 @@
-### Получить все курсы
+### Получить курсы валют за все время
 GET http://localhost:8080/api/rates
 Accept: application/json
-
+### Получить курсы валют за конкретный день
 GET http://localhost:8080/api/rates?date=year-month-day
 Accept: application/json

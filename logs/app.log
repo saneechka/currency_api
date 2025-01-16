@@ -1,0 +1,11 @@
+{"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T10:46:48+03:00"}
+{"level":"info","msg":"Сервер запущен","pid":106823,"port":8080,"time":"2025-01-16T10:46:49+03:00"}
+{"duration":"1.266939ms","level":"info","method":"GET","msg":"HTTP Request","path":"/api/rates","remoteIP":"[::1]:50654","requestID":"1737013631647866286-ed5e36f2","size":4391,"status":200,"time":"2025-01-16T10:47:11+03:00","userAgent":"curl/8.11.1"}
+{"duration":"1.153226ms","level":"info","method":"GET","msg":"HTTP Request","path":"/api/rates","remoteIP":"[::1]:33856","requestID":"1737013641041865960-432de339","size":4391,"status":200,"time":"2025-01-16T10:47:21+03:00","userAgent":"curl/8.11.1"}
+{"duration":"10.097733306s","level":"info","method":"GET","msg":"HTTP Request","path":"/api/rates","remoteIP":"[::1]:60486","requestID":"1737013646911846434-10a5407c","size":8778,"status":200,"time":"2025-01-16T10:47:37+03:00","userAgent":"curl/8.11.1"}
+{"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T10:48:44+03:00"}
+{"error":"ошибка получения данных из API: Get \"https://api.nbrb.by/exrates/rates?periodicity=0\": net/http: TLS handshake timeout","level":"error","msg":"Ошибка получения начальных данных из API","time":"2025-01-16T10:48:54+03:00"}
+{"level":"info","msg":"Сервер запущен","pid":108228,"port":8080,"time":"2025-01-16T10:48:54+03:00"}
+{"duration":"1.020195ms","level":"info","method":"GET","msg":"HTTP Request","path":"/api/rates","remoteIP":"[::1]:52312","requestID":"1737013802416980962-b6132e6d","size":63,"status":200,"time":"2025-01-16T10:50:02+03:00","userAgent":"curl/8.11.1"}
+{"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T10:56:26+03:00"}
+{"level":"info","msg":"Сервер запущен","pid":113699,"port":8080,"time":"2025-01-16T10:56:27+03:00"}

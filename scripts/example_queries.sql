@@ -5,10 +5,7 @@ SELECT * FROM exchange_rates;
 SELECT * FROM exchange_rates 
 WHERE Date = '2024-03-14';
 
--- Получить курс конкретной валюты
-SELECT * FROM exchange_rates 
-WHERE Cur_Abbreviation = 'USD' 
-ORDER BY Date DESC;
+
 
 -- Получить последние курсы всех валют
 SELECT r.* 

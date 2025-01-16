@@ -31,7 +31,7 @@ func LoggingMiddleware(next http.Handler) http.Handler {
         start := time.Now()
         rw := &responseWriter{ResponseWriter: w, status: http.StatusOK}
 
-        // Добавляем requestID в контекст
+        
         ctx := context.WithValue(r.Context(), "requestID", generateRequestID())
         r = r.WithContext(ctx)
 

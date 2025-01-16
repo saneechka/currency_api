@@ -24,7 +24,7 @@ func (c *RatesCache) Set(date string, rates []models.Rate) {
     defer c.mutex.Unlock()
     c.data[date] = rates
     
-    // Автоочистка по TTL
+    
     go func() {
         time.Sleep(c.ttl)
         c.Delete(date)

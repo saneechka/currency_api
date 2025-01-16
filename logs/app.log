@@ -9,3 +9,13 @@
 {"duration":"1.020195ms","level":"info","method":"GET","msg":"HTTP Request","path":"/api/rates","remoteIP":"[::1]:52312","requestID":"1737013802416980962-b6132e6d","size":63,"status":200,"time":"2025-01-16T10:50:02+03:00","userAgent":"curl/8.11.1"}
 {"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T10:56:26+03:00"}
 {"level":"info","msg":"Сервер запущен","pid":113699,"port":8080,"time":"2025-01-16T10:56:27+03:00"}
+{"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T13:45:54+03:00"}
+{"error":"dial tcp: lookup db: no such host","level":"error","msg":"Ошибка подключения к базе данных","time":"2025-01-16T13:45:54+03:00"}
+{"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T13:46:13+03:00"}
+{"error":"dial tcp: lookup db: no such host","level":"error","msg":"Ошибка подключения к базе данных","time":"2025-01-16T13:46:13+03:00"}
+{"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T13:46:49+03:00"}
+{"error":"dial tcp: lookup db: no such host","level":"error","msg":"Ошибка подключения к базе данных","time":"2025-01-16T13:46:49+03:00"}
+{"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T13:49:36+03:00"}
+{"level":"info","msg":"Сервер запущен","pid":208540,"port":8080,"time":"2025-01-16T13:49:37+03:00"}
+{"duration":"1.024988ms","level":"info","method":"GET","msg":"HTTP Request","path":"/api/rates","remoteIP":"[::1]:36858","requestID":"1737024613370463351-5916c825","size":63,"status":200,"time":"2025-01-16T13:50:13+03:00","userAgent":"curl/8.11.1"}
+{"duration":"1.258865ms","level":"info","method":"GET","msg":"HTTP Request","path":"/api/rates","remoteIP":"[::1]:36874","requestID":"1737024617881719195-ea070ae7","size":4391,"status":200,"time":"2025-01-16T13:50:17+03:00","userAgent":"curl/8.11.1"}

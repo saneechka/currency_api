@@ -28,11 +28,11 @@ func TestGetRatesByDate_NoData(t *testing.T) {
         WithArgs(testDate).
         WillReturnRows(mockRows)
 
-    // Создаем тестовый HTTP запрос
+    
     req := httptest.NewRequest("GET", "/api/rates?date="+testDate, nil)
     w := httptest.NewRecorder()
 
-    // Создаем handler и выполняем запрос
+
     handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
         mux := http.NewServeMux()
         RegisterRoutes(mux, db)
@@ -41,17 +41,18 @@ func TestGetRatesByDate_NoData(t *testing.T) {
 
     handler.ServeHTTP(w, req)
 
-    // Проверяем статус код
+    
     assert.Equal(t, http.StatusOK, w.Code)
 
-    // Проверяем тело ответа
+    
     var response map[string]string
     err = json.NewDecoder(w.Body).Decode(&response)
     assert.NoError(t, err)
     assert.Equal(t, "нет информации за эту дату", response["message"])
 
-    // Проверяем, что все ожидания были выполнены
-    if err := mock.ExpectationsWereMet(); err != nil {
+    
+    if err := mock.ExpectationsWereMet(); 
+    err != nil {
         t.Errorf("Остались невыполненные ожидания: %v", err)
     }
 }

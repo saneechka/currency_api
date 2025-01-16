@@ -43,24 +43,24 @@ func getRootDir() (string, error) {
 }
 
 func main() {
-    // Получаем абсолютный путь к корневой директории проекта
+    
     rootDir, err := getRootDir()
     if err != nil {
         log.Fatalf("Ошибка определения корневой директории проекта: %v", err)
     }
 
-    // Создаем директорию для логов строго в корне проекта
+    
     logsDir := filepath.Join(rootDir, "logs")
     if err := os.MkdirAll(logsDir, 0755); err != nil {
         log.Fatalf("Ошибка создания директории логов: %v", err)
     }
 
-    // Проверяем, что директория логов создана именно в корне проекта
+    
     if !strings.HasPrefix(logsDir, rootDir) {
         log.Fatalf("Директория логов должна находиться в корне проекта")
     }
 
-    // Инициализация логгера
+
     err = logger.Init(logger.Config{
         LogLevel:   "debug",
         LogFile:    filepath.Join(logsDir, "app.log"),
@@ -90,7 +90,7 @@ func main() {
     rateRepo := &repository.RateRepository{DB: database}
     nbrbService := service.NewNBRBService()
 
-    // Получение начальных данных
+
     rates, err := nbrbService.GetCurrentRates()
     if err != nil {
         logger.Error(err, "Ошибка получения начальных данных из API", nil)
@@ -107,10 +107,10 @@ func main() {
     rateUpdater := service.NewRateUpdater(rateRepo)
     rateUpdater.StartDailyUpdate()
 
-    // Настройка маршрутизатора с middleware
+    
     mux := http.NewServeMux()
     
-    // Оборачиваем все маршруты в middleware
+    
     handler := middleware.SecurityMiddleware(
         middleware.LoggingMiddleware(
             middleware.RecoveryMiddleware(
@@ -121,7 +121,7 @@ func main() {
     
     handlers.RegisterRoutes(mux, database)
 
-    // Логируем запуск сервера
+    
     logger.Info("Сервер запущен", map[string]interface{}{
         "port": cfg.Port,
         "pid":  os.Getpid(),

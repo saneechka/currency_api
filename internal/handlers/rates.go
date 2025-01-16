@@ -23,13 +23,13 @@ func RegisterRoutes(mux *http.ServeMux, db *sql.DB) {
 	repo := &repository.RateRepository{DB: db}
 	nbrbService := service.NewNBRBService()
 
-	// Маршрут для получения всех курсов
+	
 	mux.HandleFunc("/api/rates", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 
 		switch r.Method {
 		case http.MethodGet:
-			// Проверяем оба параметра - date и data
+			//data/date
 			date := r.URL.Query().Get("date")
 			if date == "" {
 				if r.URL.Query().Get("data") != "" {
@@ -56,10 +56,10 @@ func RegisterRoutes(mux *http.ServeMux, db *sql.DB) {
 				return
 			}
 
-			 // Получаем актуальные данные из API без сохранения
+
 			rates, err := nbrbService.GetCurrentRates()
 			if err != nil {
-				// Если API недоступен, берем из БД
+				
 				rates, err = repo.GetAllRates()
 				if err != nil {
 					http.Error(w, "Ошибка получения данных", http.StatusInternalServerError)

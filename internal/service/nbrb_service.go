@@ -33,12 +33,12 @@ func (s *NBRBService) GetCurrentRates() ([]models.Rate, error) {
     
     for i := range rates {
        
-        t, err := time.Parse("2006-01-02T15:04:05", rates[i].Date)
+        t, err := time.Parse("2025-01-02T15:04:05", rates[i].Date)
         if err != nil {
             continue
         }
       
-        rates[i].Date = t.Format("2006-01-02")
+        rates[i].Date = t.Format("2025-01-02")
     }
 
     return rates, nil

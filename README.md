@@ -1,6 +1,6 @@
 # Сервис Обмена Валют
 
-Простой и надёжный сервис для отслеживания курсов валют.
+
 
 ## 🚀 Быстрый Старт
 
@@ -196,8 +196,6 @@ docker-compose down
 ---
 
 # Currency Exchange Rates Service
-
-Simple and reliable service for tracking currency exchange rates.
 
 ## 🚀 Quick Start
 

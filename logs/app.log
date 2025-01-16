@@ -19,3 +19,38 @@
 {"level":"info","msg":"Сервер запущен","pid":208540,"port":8080,"time":"2025-01-16T13:49:37+03:00"}
 {"duration":"1.024988ms","level":"info","method":"GET","msg":"HTTP Request","path":"/api/rates","remoteIP":"[::1]:36858","requestID":"1737024613370463351-5916c825","size":63,"status":200,"time":"2025-01-16T13:50:13+03:00","userAgent":"curl/8.11.1"}
 {"duration":"1.258865ms","level":"info","method":"GET","msg":"HTTP Request","path":"/api/rates","remoteIP":"[::1]:36874","requestID":"1737024617881719195-ea070ae7","size":4391,"status":200,"time":"2025-01-16T13:50:17+03:00","userAgent":"curl/8.11.1"}
+{"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T14:24:27+03:00"}
+{"error":"Error 1698 (28000): Access denied for user 'root'@'localhost'","level":"error","msg":"Ошибка подключения к базе данных","time":"2025-01-16T14:24:27+03:00"}
+{"fields.level":"debug","level":"info","logFile":"/home/alex/Documents/test/logs/app.log","msg":"Логгер инициализирован","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"AUD","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"AMD","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"BGN","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"BRL","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"UAH","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"DKK","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"AED","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"USD","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"VND","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"EUR","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"PLN","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"JPY","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"INR","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"IRR","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"ISK","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"CAD","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"CNY","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"KWD","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"MDL","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"NZD","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"NOK","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"RUB","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"XDR","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"SGD","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"KGS","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"KZT","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"TRY","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"GBP","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"CZK","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"SEK","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"currency":"CHF","error":"Error 1292 (22007): Truncated incorrect date value: '2025-01-16T00:00:00'","level":"error","msg":"Ошибка сохранения курса","time":"2025-01-16T14:24:52+03:00"}
+{"level":"info","msg":"Сервер запущен","pid":230108,"port":8080,"time":"2025-01-16T14:24:52+03:00"}

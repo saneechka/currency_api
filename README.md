@@ -93,7 +93,7 @@ go run cmd/main.go
 
 ### Пример запроса
 ```bash
-curl http://localhost:8080/api/rates?date=2024-03-14
+curl http://localhost:8080/api/rates?date=2025-01-15
 ```
 
 ### Пример ответа
@@ -101,13 +101,30 @@ curl http://localhost:8080/api/rates?date=2024-03-14
 [
   {
     "Cur_ID": 431,
-    "Date": "2024-03-14",
+    "Date": "2025-01-15",
     "Cur_Abbreviation": "USD",
     "Cur_Scale": 1,
     "Cur_Name": "Доллар США",
     "Cur_OfficialRate": 3.2345
   }
 ]
+```### Сборка проекта
+```bash
+# Полная сборка с проверками
+make all
+
+# Только сборка
+make build
+
+# Сборка и запуск
+make run
+
+# Запуск в Docker
+make docker
+
+# Очистка
+make clean
+```
 ```
 
 ### Swagger Документация
@@ -141,6 +158,18 @@ swagger-cli bundle api/openapi.yaml > api/swagger.json
 
 ## 🛠 Разработка
 
+### Линтинг
+```bash
+# Установка линтера (только первый раз)
+make lint-install
+
+# Запуск проверки кода
+make lint
+
+# Автоматическое исправление проблем (где возможно)
+make lint-fix
+```
+
 ### Тестирование
 ```bash
 # Запуск всех тестов
@@ -158,6 +187,8 @@ npm install @openapitools/openapi-generator-cli -g
 # Генерация TypeScript клиента
 openapi-generator generate -i api/openapi.yaml -g typescript-fetch -o generated/typescript
 ```
+
+
 
 ## 🔍 Мониторинг и Устранение Проблем
 
@@ -288,7 +319,7 @@ go run cmd/main.go
 
 ### Example Request
 ```bash
-curl http://localhost:8080/api/rates?date=2024-03-14
+curl http://localhost:8080/api/rates?date=2025-01-15
 ```
 
 ### Example Response
@@ -296,7 +327,7 @@ curl http://localhost:8080/api/rates?date=2024-03-14
 [
   {
     "Cur_ID": 431,
-    "Date": "2024-03-14",
+    "Date": "2025-01-15",
     "Cur_Abbreviation": "USD",
     "Cur_Scale": 1,
     "Cur_Name": "US Dollar",
@@ -336,6 +367,15 @@ swagger-cli bundle api/openapi.yaml > api/swagger.json
 
 ## 🛠 Development
 
+### Linting
+```bash
+# Install linter
+make lint-install
+
+# Run lint check
+make lint
+```
+
 ### Testing
 ```bash
 # Run all tests
@@ -352,6 +392,24 @@ npm install @openapitools/openapi-generator-cli -g
 
 # Generate TypeScript client
 openapi-generator generate -i api/openapi.yaml -g typescript-fetch -o generated/typescript
+```
+
+### Project Build
+```bash
+# Full build with checks
+make all
+
+# Build only
+make build
+
+# Build and run
+make run
+
+# Run in Docker
+make docker
+
+# Clean up
+make clean
 ```
 
 ## 🔍 Monitoring & Troubleshooting
@@ -388,5 +446,4 @@ docker-compose logs -f db
 docker-compose down
 ```
 
-----------------
 

@@ -1,0 +1,25 @@
+linters:
+  disable-all: true
+  enable:
+    - govet
+    - errcheck
+    - staticcheck
+    - gosimple
+    - unused
+    - gofmt
+
+run:
+  go: '1.21'
+  timeout: 5m
+  skip-dirs:
+    - vendor/
+
+issues:
+  exclude-rules:
+    - path: _test\.go
+      linters:
+        - errcheck
+
+linters-settings:
+  staticcheck:
+    go: "1.21"

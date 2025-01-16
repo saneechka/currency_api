@@ -1,18 +1,18 @@
 package handlers
 
 import (
+	"database/sql"
 	"encoding/json"
+	_ "log"
 	"net/http"
 	"testProject/internal/repository"
-	"database/sql"
 	"testProject/internal/service"
-	_"log"
 )
 
 func GetAllRates(repo *repository.RateRepository) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		rates, err := repo.GetAllRates()
-		if (err != nil) {
+		if err != nil {
 			http.Error(w, "Ошибка получения данных", http.StatusInternalServerError)
 			return
 		}
@@ -81,4 +81,3 @@ func GetRatesByDate(repo *repository.RateRepository) http.HandlerFunc {
 		json.NewEncoder(w).Encode(rates)
 	}
 }
-

@@ -110,6 +110,35 @@ curl http://localhost:8080/api/rates?date=2024-03-14
 ]
 ```
 
+### Swagger Документация
+
+Для просмотра интерактивной API документации:
+
+```bash
+# Запуск Swagger UI через Docker
+docker run -p 8081:8080 -e SWAGGER_JSON=/api/openapi.yaml -v ${PWD}/api:/api swaggerapi/swagger-ui
+```
+
+Откройте http://localhost:8081 в браузере для просмотра документации.
+
+Альтернативные способы:
+
+1. Онлайн редактор:
+   - Перейдите на https://editor.swagger.io/
+   - Импортируйте файл `api/openapi.yaml`
+
+2. Локальная установка:
+```bash
+# Установка swagger-cli
+npm install -g swagger-cli
+
+# Валидация документации
+swagger-cli validate api/openapi.yaml
+
+# Сборка документации
+swagger-cli bundle api/openapi.yaml > api/swagger.json
+```
+
 ## 🛠 Разработка
 
 ### Тестирование
@@ -276,6 +305,35 @@ curl http://localhost:8080/api/rates?date=2024-03-14
     "Cur_OfficialRate": 3.2345
   }
 ]
+```
+
+### Swagger Documentation
+
+To view interactive API documentation:
+
+```bash
+# Run Swagger UI via Docker
+docker run -p 8081:8080 -e SWAGGER_JSON=/api/openapi.yaml -v ${PWD}/api:/api swaggerapi/swagger-ui
+```
+
+Open http://localhost:8081 in your browser to view the documentation.
+
+Alternative methods:
+
+1. Online editor:
+   - Go to https://editor.swagger.io/
+   - Import the `api/openapi.yaml` file
+
+2. Local installation:
+```bash
+# Install swagger-cli
+npm install -g swagger-cli
+
+# Validate documentation
+swagger-cli validate api/openapi.yaml
+
+# Bundle documentation
+swagger-cli bundle api/openapi.yaml > api/swagger.json
 ```
 
 ## 🛠 Development

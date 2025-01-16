@@ -18,10 +18,9 @@ func NewRateUpdater(repo *repository.RateRepository) *RateUpdater {
 }
 
 func (ru *RateUpdater) StartDailyUpdate() {
-    // Первое обновление при запуске
+   
     ru.updateRates()
 
-    // Запускаем обновление каждые 24 часа
     ticker := time.NewTicker(24 * time.Hour)
     go func() {
         for range ticker.C {
@@ -42,7 +41,6 @@ func (ru *RateUpdater) updateRates() error {
         return fmt.Errorf("ошибка декодирования ответа: %v", err)
     }
 
-    // Сохраняем курсы в БД
     for _, rate := range rates {
         if err := ru.repo.SaveRate(rate); err != nil {
             return fmt.Errorf("ошибка сохранения курса %s: %v", rate.Cur_Abbreviation, err)

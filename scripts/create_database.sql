@@ -1,13 +1,12 @@
--- Создаем базу данных
 CREATE DATABASE IF NOT EXISTS currency_db;
 
--- Переключаемся на созданную базу
 USE currency_db;
 
--- Создаем таблицу
+DROP TABLE IF EXISTS exchange_rates;
+
 CREATE TABLE IF NOT EXISTS exchange_rates (
     Cur_ID           INT NOT NULL,
-    Date             VARCHAR(10) NOT NULL,
+    Date             DATE NOT NULL,  
     Cur_Abbreviation VARCHAR(3) NOT NULL,
     Cur_Scale        INT NOT NULL,
     Cur_Name         VARCHAR(100) NOT NULL,
@@ -16,8 +15,8 @@ CREATE TABLE IF NOT EXISTS exchange_rates (
 );
 
 -- Добавляем тестовые данные
-INSERT INTO exchange_rates VALUES 
-    (431, '2024-03-14', 'USD', 1, 'Доллар США', 3.2345),
-    (451, '2024-03-14', 'EUR', 1, 'Евро', 3.5678),
-    (431, '2024-03-15', 'USD', 1, 'Доллар США', 3.2350),
-    (451, '2024-03-15', 'EUR', 1, 'Евро', 3.5680);
+--INSERT INTO exchange_rates VALUES 
+  --  (431, '2024-03-14', 'USD', 1, 'Доллар США', 3.2345),
+    --(451, '2024-03-14', 'EUR', 1, 'Евро', 3.5678),
+    --(431, '2024-03-15', 'USD', 1, 'Доллар США', 3.2350),
+    --(451, '2024-03-15', 'EUR', 1, 'Евро', 3.5680);

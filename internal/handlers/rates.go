@@ -23,23 +23,14 @@ func RegisterRoutes(mux *http.ServeMux, db *sql.DB) {
 	repo := &repository.RateRepository{DB: db}
 	nbrbService := service.NewNBRBService()
 
-	
 	mux.HandleFunc("/api/rates", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/json")
 
 		switch r.Method {
 		case http.MethodGet:
-			//data/date
 			date := r.URL.Query().Get("date")
-			if date == "" {
-				if r.URL.Query().Get("data") != "" {
-					w.WriteHeader(http.StatusBadRequest)
-					json.NewEncoder(w).Encode(map[string]string{
-						"error": "Используйте параметр 'date' вместо 'data'",
-					})
-					return
-				}
-			} else {
+			if date != "" {
+				// Если указана дата, получаем курсы за эту дату
 				rates, err := repo.GetRatesByDate(date)
 				if err != nil {
 					http.Error(w, "Ошибка получения данных", http.StatusInternalServerError)
@@ -56,15 +47,17 @@ func RegisterRoutes(mux *http.ServeMux, db *sql.DB) {
 				return
 			}
 
-
-			rates, err := nbrbService.GetCurrentRates()
+			// Если дата не указана, получаем все курсы из базы
+			rates, err := repo.GetAllRates()
 			if err != nil {
-				
-				rates, err = repo.GetAllRates()
-				if err != nil {
+				// Если не удалось получить из базы, пробуем получить текущие из API
+				currentRates, apiErr := nbrbService.GetCurrentRates()
+				if apiErr != nil {
 					http.Error(w, "Ошибка получения данных", http.StatusInternalServerError)
 					return
 				}
+				json.NewEncoder(w).Encode(currentRates)
+				return
 			}
 			json.NewEncoder(w).Encode(rates)
 

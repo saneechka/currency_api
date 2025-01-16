@@ -6,20 +6,24 @@
 
 ## Запуск на новом устройстве
 
-### Шаг 1: Установка Docker
+###  Установка Docker
 ```bash
 # Ubuntu
 sudo apt update
 sudo apt install docker.io docker-compose
+
+# Arch-based
+sudo pacman -Sy
+sudo pacman -S docker docker-compose
 
 # MacOS
 brew install docker docker-compose
 
 ```
 
-### Шаг 2: Получение проекта
+###  Клонирование репозитория
 ```bash
-# Клонирование репозитория
+
 git clone https://github.com/saneechka/currency-service.git
 cd currency-service
 ```
@@ -62,10 +66,10 @@ sudo pacman -S mariadb
 - [Схема базы данных](./scripts/create_database.sql)
 
 
-
+```bash
 sudo systemctl start mariadb
 sudo systemctl enable mariadb
-
+```
 # Настройка безопасности
 sudo mysql_secure_installation
 ```
@@ -111,7 +115,7 @@ DATABASE_DSN=root:your_password@tcp(localhost:3306)/currency_db?parseTime=true
 go run cmd/main.go
 ```
 
-### Шаг 4: Проверка работы
+###  Проверка работы
 
 1. Проверьте статус контейнеров:
 ```bash

@@ -30,7 +30,7 @@ func RegisterRoutes(mux *http.ServeMux, db *sql.DB) {
 		case http.MethodGet:
 			date := r.URL.Query().Get("date")
 			if date != "" {
-				// Если указана дата, получаем курсы за эту дату
+				
 				rates, err := repo.GetRatesByDate(date)
 				if err != nil {
 					http.Error(w, "Ошибка получения данных", http.StatusInternalServerError)
@@ -47,10 +47,10 @@ func RegisterRoutes(mux *http.ServeMux, db *sql.DB) {
 				return
 			}
 
-			// Если дата не указана, получаем все курсы из базы
+			
 			rates, err := repo.GetAllRates()
 			if err != nil {
-				// Если не удалось получить из базы, пробуем получить текущие из API
+				
 				currentRates, apiErr := nbrbService.GetCurrentRates()
 				if apiErr != nil {
 					http.Error(w, "Ошибка получения данных", http.StatusInternalServerError)
